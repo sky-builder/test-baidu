@@ -27,11 +27,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (_hmt) {
-        if (to.path) {
-            _hmt.push(['_trackPageview', to.fullPath]);
-        }
-    }
+    if (to.path) window._hmt.push(['_trackPageview', to.fullPath])
     next();
 })
 
